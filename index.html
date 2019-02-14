@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI Prediction App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="BMI Prediction App">
+  <meta name="author" content="Karla Khalid">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="./assets/css/slidify.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>BMI Prediction App</h1>
+    <h2>A Requirement for the Developing Data Products Course</h2>
+    <p>Karla Khalid<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Predict Health Status from Height and Weight</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Objective:</p>
+
+<ul>
+<li>Use the 500 Person Gender-Height-Weight-Body Mass Index (BMI) dataset from Kaggle</li>
+<li>Predict a person&#39;s BMI given his/her Height and Weight measurements using a linear regression model</li>
+<li>Provide visualization of dataset statistics</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Model Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Multiple-R-squared (R2) value = 0.8259 which shows that the model is a good fit! </li>
+<li>p-values show that the variables Height &amp; Weight are very significant.</li>
+</ul>
+
+<pre><code>## 
+## Call:
+## lm(formula = Index ~ Height + Weight, data = BMIdata)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.34074 -0.38219  0.06156  0.39778  1.11542 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  6.1211460  0.2771076   22.09   &lt;2e-16 ***
+## Height      -0.0349686  0.0015487  -22.58   &lt;2e-16 ***
+## Weight       0.0336751  0.0007832   43.00   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.5665 on 497 degrees of freedom
+## Multiple R-squared:  0.8259, Adjusted R-squared:  0.8252 
+## F-statistic:  1179 on 2 and 497 DF,  p-value: &lt; 2.2e-16
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Dataset Visualization sample</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/scatterplot-1.png" alt="plot of chunk scatterplot"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>App Interface</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src = 'https://kmmkhalid.shinyapps.io/ddp_shinyproject/' ></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Predict Health Status from Height and Weight'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Model Summary'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Dataset Visualization sample'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='App Interface'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

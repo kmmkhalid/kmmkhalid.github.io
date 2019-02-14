@@ -1,0 +1,64 @@
+---
+title       : BMI Prediction App   
+subtitle    : A Requirement for the Developing Data Products Course
+author      : Karla Khalid
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Predict Health Status from Height and Weight
+
+Objective:
+ - Use the 500 Person Gender-Height-Weight-Body Mass Index (BMI) dataset from Kaggle
+ - Predict a person's BMI given his/her Height and Weight measurements using a linear regression model
+ - Provide visualization of dataset statistics
+
+--- .class #id 
+
+## Model Summary
+
+- Multiple-R-squared (R2) value = 0.8259 which shows that the model is a good fit! 
+- p-values show that the variables Height & Weight are very significant.
+
+```{r model, echo=FALSE}
+BMIdata <- read.csv("C:/Users/Karla/Documents/R/DDP_ShinyProject/500_Person_Gender_Height_Weight_Index.csv", header = TRUE)
+BMIdata$Category <- cut(BMIdata$Index, 6, c("Extremely Weak", "Weak", "Normal","Overweight", "Obese","Extreme Obese" ))
+
+fitmodel <- lm(Index ~ Height + Weight, data = BMIdata)
+print(summary(fitmodel))
+
+```
+
+---
+
+## Dataset Visualization sample
+
+```{r scatterplot, echo=FALSE}
+require(ggplot2)
+title <- paste("Height vs Weight: Male & Female")
+        sp <- ggplot(BMIdata, aes(x=Height, y=Weight, colour = Index)) + 
+                geom_point() +
+                
+                labs(colour="BMI", title = title, caption = "Source: https://www.kaggle.com/yersever/500-person-gender-height-weight-bodymassindex") +
+                scale_color_gradientn(colours = rainbow(6), labels=c("0: Extremely Weak", "1: Weak", "2: Normal","3: Overweight", "4: Obese","5:Extreme Obese" ) ) 
+        sp
+```
+
+---
+
+## App Interface
+
+<iframe src = 'https://kmmkhalid.shinyapps.io/ddp_shinyproject/' ></iframe>
+
+
+
+
+
+
+
+
